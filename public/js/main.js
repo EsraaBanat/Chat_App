@@ -6,6 +6,9 @@ const roomName = document.getElementById('room-name');
 const userList = document.getElementById('users');
 
 
+
+
+
 // Get user name and room from URL
 const {
     username,
@@ -19,7 +22,8 @@ const socket = io();
 
 //Get room and users
 socket.on('roomUsers', ({
-    room , users
+    room,
+    users
 }) => {
     outputRoomName(room);
     outputUsers(users);
@@ -29,8 +33,7 @@ socket.on('roomUsers', ({
 socket.emit('joinRoom', {
     username,
     room
-})
-
+});
 //Message from server
 socket.on('message', (message) => {
     console.log(message);
@@ -38,6 +41,7 @@ socket.on('message', (message) => {
 
     // When get a new message Scroll down
     chatMessages.scrollTop = chatMessages.scrollHeight;
+
 });
 
 // Message submit 
@@ -54,14 +58,13 @@ chatForm.addEventListener('submit', (event) => {
     event.target.elements.msg.value = '';
     event.target.elements.msg.focus();
 
-
 });
 
 
 //Output Message to DOM
 function outputMessage(message) {
     const div = document.createElement('div');
-    div.classList.add('message')
+    div.classList.add('message');
     div.innerHTML = `<p class="meta">${message.username}<span>${message.time}</span></p>
     <p class="text">${message.text}</p>`;
     document.querySelector('.chat-messages').appendChild(div); //select by class
@@ -74,5 +77,5 @@ function outputRoomName(room) {
 
 // Add users to DOM
 function outputUsers(users) {
-    userList.innerHTML = `${users.map(user=>`<li>${user.username}</li>`).join('')} `
+    userList.innerHTML = `${users.map(user => `<li>${user.username}</li>`).join('')} `
 }

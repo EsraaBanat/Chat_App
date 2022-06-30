@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 :root {
-	--dark-color-a: #667aff;
-	--dark-color-b: #7386ff;
+	--dark-color-a: #20dbd8;
+	--dark-color-b: #88ece9;
 	--light-color: #e6e9ff;
 	--success-color: #5cb85c;
 	--error-color: #d9534f;
@@ -38,6 +38,16 @@ a {
 	font-size: 17px;
 }
 
+.sendbtn {
+	height:35px;
+	cursor: pointer;
+	padding: 5px 15px;
+	background: var(--light-color);
+	color: var(--dark-color-a);
+	border: 0;
+	font-size: 13px;
+}
+
 /* Chat Page */
 
 .chat-container {
@@ -68,6 +78,7 @@ a {
 	color: #fff;
 	padding: 20px 20px 60px;
 	overflow-y: scroll;
+	max-height: 31rem;
 }
 
 .chat-sidebar h2 {
@@ -124,6 +135,10 @@ a {
 	padding: 5px;
 	height: 40px;
 	flex: 1;
+}
+
+.chat-form-container input {
+	height: 100px;
 }
 
 /* Join Page */
