@@ -20,4 +20,4 @@ In this project we will build a chat app using Node, express & socket.io with ro
 5. Ahamd Amaireh
 
 
-## [**Test it on Heroku**](https://dashboard.heroku.com/apps/movie-js/deploy/github)
+## [**Test it on Heroku**](https://chat-js02.herokuapp.com/)
