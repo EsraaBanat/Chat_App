@@ -1,6 +1,6 @@
 # Chat_App
 
-## Full Stack Squad Group
+## Full Stack Squad 
 
 ## Overview:
 
